@@ -23,6 +23,11 @@ class puppetboard::params {
         seltype => 'httpd_sys_content_t',
       }
     }
+
+    'Gentoo': {
+      $apache_confd   = '/etc/apache2/vhosts.d'
+      $apache_service = 'apache2'
+    }
     default: { fail("The ${::osfamily} operating system is not supported with the puppetboard module") }
   }
 
